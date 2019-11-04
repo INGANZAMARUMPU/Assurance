@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/btnClients"
+            android:icon="@drawable/ic_clients_black_24dp"
+            android:title="Clients" />
+        <item
+            android:id="@+id/btnAssurances"
+            android:icon="@drawable/ic_assurance_black_24dp"
+            android:title="Assurances" />
+        <item
+            android:id="@+id/btnAutos"
+            android:icon="@drawable/ic_autos_black_24dp"
+            android:title="Automobiles" />
+        <item
+            android:id="@+id/btnLogout"
+            android:icon="@drawable/ic_logout_black_24dp"
+            android:title="Deconnexion" />
+    </group>
+
+</menu>
