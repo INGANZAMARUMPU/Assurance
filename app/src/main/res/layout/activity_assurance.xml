@@ -48,26 +48,76 @@
         android:inputType="date" />
 
     <TextView
-        android:id="@+id/textView12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Automobile" />
-
-    <Spinner
-        android:id="@+id/combo_ass_auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:text="Automobile"
+        android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/combo_ass_client"
+        android:id="@+id/lbl_ass_auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/champ_ass_plaque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btn_ass_plaque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="verifierPlaque"
+            android:text="verifier la plaque"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="client" />
 
-    <Spinner
-        android:id="@+id/spinner3"
+    <TextView
+        android:id="@+id/lbl_ass_client"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAlignment="viewStart"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/champ_ass_cni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btn_ass_cni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="verifierCni"
+            android:text="verifier la CNI"
+            android:textSize="10sp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView14"
@@ -83,23 +133,26 @@
         android:inputType="date" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_ass_suppr"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="supprimer"
         android:layout_gravity="center"
+        android:onClick="supprimerAssurance"
+        android:text="supprimer"
         android:textColor="#f00" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_ass_modif"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="modifierAssurance"
         android:text="Modifier" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_ass_ajouter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="ajouterAssurance"
         android:text="Ajouter" />
 </LinearLayout>

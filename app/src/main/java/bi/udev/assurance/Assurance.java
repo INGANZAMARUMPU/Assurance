@@ -5,9 +5,9 @@ package bi.udev.assurance;
  */
 
 class Assurance {
-    String id, no_police, montant, debut, materiel, client, fin, plaque;
+    String id, no_police, montant, debut, materiel, client, fin, plaque, CNI;
 
-    public Assurance(String id, String no_police, String montant, String debut, String materiel, String client, String fin, String plaque) {
+    public Assurance(String id, String no_police, String montant, String debut, String materiel, String client, String fin, String plaque, String CNI) {
         this.id = id;
         this.no_police = no_police;
         this.montant = montant;
@@ -16,5 +16,6 @@ class Assurance {
         this.client = client;
         this.fin = fin;
         this.plaque = plaque;
+        this.CNI = CNI;
     }
 }

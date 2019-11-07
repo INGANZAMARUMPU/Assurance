@@ -57,7 +57,7 @@ public class AssuranceFragment extends Fragment {
         assurances = new ArrayList<Assurance>();
         page = 1;
         
-        chargerAssurance(page);
+        chargerAssurance(/*page*/);
 
         gridLayoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -71,19 +71,18 @@ public class AssuranceFragment extends Fragment {
 //                chargerAssurance(page);
 //            }
 //        });
-
+//
         return rootView;
     }
 
-    private void chargerAssurance(int page) {
-        int no_page = page;
+    private void chargerAssurance(/*int page*/) {
+//        int no_page = page;
         String token = sharedPreferences.getString("token", "");
 
         OkHttpClient client = new OkHttpClient();
         HttpUrl.Builder urlBuilder = HttpUrl.parse("http://"+ Host.URL+"/assurances/"/*+no_page*/).newBuilder();
         String url = urlBuilder.build().toString();
 
-        Log.i("============", url);
         Request request = new Request.Builder()
                 .url(url)
                 .header("Authorization", "Token "+token)
@@ -116,7 +115,8 @@ public class AssuranceFragment extends Fragment {
                                 jsonObject.getString("materiel"),
                                 jsonObject.getString("client"),
                                 jsonObject.getString("fin"),
-                                jsonObject.getString("plaque")
+                                jsonObject.getString("plaque"),
+                                jsonObject.getString("CNI")
 
                         );
                         Log.i("========", produit.toString());

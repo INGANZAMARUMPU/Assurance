@@ -96,10 +96,12 @@
 
             <Button
                 android:id="@+id/btn_auto_verifier"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="verifier" />
+                android:onClick="verifierCni"
+                android:text="verifier CNI"
+                android:textSize="10sp" />
         </LinearLayout>
 
         <Button
@@ -107,20 +109,23 @@
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Supprimer"
             android:layout_gravity="center"
+            android:onClick="supprimerAutomobile"
+            android:text="Supprimer"
             android:textColor="#f00" />
 
         <Button
             android:id="@+id/btn_auto_modif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="modifierAutomobile"
             android:text="Modifier" />
 
         <Button
             android:id="@+id/btn_auto_ajouter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="ajouterAutomobile"
             android:text="Ajouter" />
 
     </LinearLayout>

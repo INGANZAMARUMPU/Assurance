@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -60,15 +61,8 @@ public class DrawerLayoutActivity extends AppCompatActivity
         String nom = sharedPreferences.getString("nom", "");
         String prenom = sharedPreferences.getString("prenom", defaut);
         String username = prenom+" "+nom;
-        String url_image = Host.URL+sharedPreferences.getString("avatar","");
-
-        imgAvatar = (ImageView) findViewById(R.id.imgAvatar);
-        lbl_drawer_email = (TextView) findViewById(R.id.lbl_drawer_email);
-        lbl_drawer_username = (TextView) findViewById(R.id.lbl_drawer_username);
-
-//        lbl_drawer_username.setText(username);
-//        lbl_drawer_email.setText(email);
-//        Glide.with(DrawerLayoutActivity.this).load(url_image).into(imgAvatar);
+        String url_image = sharedPreferences.getString("avatar","");
+        Log.i("========", url_image);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setVisibility(View.INVISIBLE);
@@ -80,6 +74,17 @@ public class DrawerLayoutActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        View headerView = navigationView.getHeaderView(0);
+
+        imgAvatar = (ImageView) headerView.findViewById(R.id.imgAvatar);
+        lbl_drawer_email = (TextView) headerView.findViewById(R.id.lbl_drawer_email);
+        lbl_drawer_username = (TextView) headerView.findViewById(R.id.lbl_drawer_username);
+
+        lbl_drawer_username.setText(username);
+        lbl_drawer_email.setText(email);
+        Glide.with(DrawerLayoutActivity.this).load(url_image).into(imgAvatar);
+
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -106,7 +111,7 @@ public class DrawerLayoutActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.btnLogout) {
-            return true;
+            logout();
         }
 
         return super.onOptionsItemSelected(item);
@@ -117,7 +122,11 @@ public class DrawerLayoutActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        fab.setVisibility(View.VISIBLE);
+        String organization = sharedPreferences.getString("organisation", "sans");
+
+        if (organization.equalsIgnoreCase("rnp")) {
+            fab.setVisibility(View.VISIBLE);
+        }
 
         if (id == R.id.btnLogout) {
             logout();

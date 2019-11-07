@@ -61,7 +61,7 @@ public class ClientsFragment extends Fragment {
         clients = new ArrayList<Client>();
         page = 1;
 
-        chargerClient(page);
+        chargerClient(/*page*/);
 
         gridLayoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -80,8 +80,8 @@ public class ClientsFragment extends Fragment {
     }
 
 
-    private void chargerClient(int page) {
-        int no_page = page;
+    private void chargerClient(/*int page*/) {
+//        int no_page = page;
         String token = sharedPreferences.getString("token", "");
 
         OkHttpClient client = new OkHttpClient();
@@ -122,7 +122,6 @@ public class ClientsFragment extends Fragment {
                                 jsonObject.getString("tel"),
                                 jsonObject.getString("depuis")
                         );
-                        Log.i("========", produit.toString());
                         clients.add(produit);
                         getActivity().runOnUiThread(new Runnable() {
                             @Override

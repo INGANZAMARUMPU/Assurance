@@ -47,6 +47,7 @@ class AdaptateurAssurance extends RecyclerView.Adapter<AdaptateurAssurance.ViewH
                 intent.putExtra("client", assurances.get(position).client);
                 intent.putExtra("fin", assurances.get(position).fin);
                 intent.putExtra("plaque", assurances.get(position).plaque);
+                intent.putExtra("CNI", assurances.get(position).CNI);
                 intent.putExtra("ajouter", "false");
                 context.startActivity(intent);
             }

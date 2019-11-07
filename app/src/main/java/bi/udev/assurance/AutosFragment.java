@@ -61,11 +61,11 @@ public class AutosFragment extends Fragment {
         automobiles = new ArrayList<Automobile>();
         page = 1;
 
-        chargerAutomobile(page);
+        chargerAutomobile(/*page*/);
 
-        gridLayoutManager = new GridLayoutManager(getActivity(), 1);
+        gridLayoutManager = new GridLayoutManager(getContext(), 1);
         recyclerView.setLayoutManager(gridLayoutManager);
-        adaptateur = new AdaptateurAuto(getActivity(), automobiles);
+        adaptateur = new AdaptateurAuto(getContext(), automobiles);
 
         recyclerView.setAdapter(adaptateur);
 //        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -79,8 +79,8 @@ public class AutosFragment extends Fragment {
         return rootView;
     }
 
-    private void chargerAutomobile(int page) {
-        int no_page = page;
+    private void chargerAutomobile() {
+        /*int no_page = page;*/
         String token = sharedPreferences.getString("token", "");
 
         OkHttpClient client = new OkHttpClient();
@@ -121,7 +121,7 @@ public class AutosFragment extends Fragment {
                                 jsonObject.getString("roues"),
                                 jsonObject.getString("CNI")
                         );
-                        Log.i("========", produit.toString());
+                        Log.i("=============", produit.toString());
                         automobiles.add(produit);
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
