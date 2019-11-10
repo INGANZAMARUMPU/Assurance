@@ -62,7 +62,6 @@ public class DrawerLayoutActivity extends AppCompatActivity
         String prenom = sharedPreferences.getString("prenom", defaut);
         String username = prenom+" "+nom;
         String url_image = sharedPreferences.getString("avatar","");
-        Log.i("========", url_image);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setVisibility(View.INVISIBLE);
@@ -86,6 +85,10 @@ public class DrawerLayoutActivity extends AppCompatActivity
         Glide.with(DrawerLayoutActivity.this).load(url_image).into(imgAvatar);
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_principale, new ClientsFragment())
+                .commit();
     }
 
     @Override

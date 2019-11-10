@@ -157,6 +157,7 @@ public class ClientActivity extends AppCompatActivity {
                 }
             }
         });
+        finish();
     }
 
     public void modifierClient(View view) {
@@ -222,6 +223,7 @@ public class ClientActivity extends AppCompatActivity {
                 }
             }
         });
+        finish();
     }
     public void supprimerClient(View view){
         String token = sharedPreferences.getString("token", "");
@@ -258,5 +260,6 @@ public class ClientActivity extends AppCompatActivity {
                 });
             }
         });
+        finish();
     }
 }

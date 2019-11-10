@@ -17,16 +17,4 @@ public class Automobile {
         this.CNI = CNI;
     }
 
-    @Override
-    public String toString() {
-        return "Automobile{" +
-                "id='" + id + '\'' +
-                ", client='" + client + '\'' +
-                ", nom='" + nom + '\'' +
-                ", plaque='" + plaque + '\'' +
-                ", chassis='" + chassis + '\'' +
-                ", roues='" + roues + '\'' +
-                ", CNI='" + CNI + '\'' +
-                '}';
-    }
 }

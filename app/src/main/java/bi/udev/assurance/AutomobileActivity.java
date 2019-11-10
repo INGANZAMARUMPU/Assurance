@@ -213,6 +213,7 @@ public class AutomobileActivity extends AppCompatActivity {
                 }
             }
         });
+        finish();
     }
 
     public void modifierAutomobile(View view) {
@@ -278,13 +279,14 @@ public class AutomobileActivity extends AppCompatActivity {
                 }
             }
         });
+        finish();
     }
     public void supprimerAutomobile(View view){
 
         String token = sharedPreferences.getString("token", "");
 
         OkHttpClient client = new OkHttpClient();
-        HttpUrl.Builder urlBuilder = HttpUrl.parse("http://"+ Host.URL+"/automobiles/"+id+"/").newBuilder();
+        HttpUrl.Builder urlBuilder = HttpUrl.parse("http://"+ Host.URL+"/materiels/"+id+"/").newBuilder();
 
         String url = urlBuilder.build().toString();
         Request request = new Request.Builder()
@@ -315,5 +317,6 @@ public class AutomobileActivity extends AppCompatActivity {
                 });
             }
         });
+        finish();
     }
 }

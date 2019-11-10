@@ -2,13 +2,18 @@ package bi.udev.assurance;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by KonstrIctor on 01/11/2019.
@@ -34,6 +39,19 @@ class AdaptateurAssurance extends RecyclerView.Adapter<AdaptateurAssurance.ViewH
         holder.lbl_ass_plaque.setText(assurances.get(position).plaque);
         holder.lbl_ass_date.setText(assurances.get(position).fin);
         holder.lbl_ass_auto.setText(assurances.get(position).materiel);
+
+        try {
+            Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(assurances.get(position).fin);
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = new Date();
+            if (date.compareTo(date1) == 1){
+                holder.lbl_ass_date.setTextColor(Color.RED);
+                holder.lbl_ass_auto.setTextColor(Color.RED);
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override

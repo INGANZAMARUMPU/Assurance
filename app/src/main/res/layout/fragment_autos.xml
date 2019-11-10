@@ -4,9 +4,20 @@
     android:layout_height="match_parent"
     tools:context="bi.udev.assurance.AutosFragment">
 
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerAutos"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Liste des Automobiles"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:id="@+id/textView13" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerAutos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView13" />
+    </RelativeLayout>
 </FrameLayout>

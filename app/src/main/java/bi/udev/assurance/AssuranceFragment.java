@@ -119,7 +119,6 @@ public class AssuranceFragment extends Fragment {
                                 jsonObject.getString("CNI")
 
                         );
-                        Log.i("========", produit.toString());
                         assurances.add(produit);
                         getActivity().runOnUiThread(new Runnable() {
                             @Override

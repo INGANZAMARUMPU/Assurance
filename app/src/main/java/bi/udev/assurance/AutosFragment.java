@@ -87,7 +87,6 @@ public class AutosFragment extends Fragment {
         HttpUrl.Builder urlBuilder = HttpUrl.parse("http://"+ Host.URL+"/materiels/"/*+no_page*/).newBuilder();
         String url = urlBuilder.build().toString();
 
-        Log.i("============", url);
         Request request = new Request.Builder()
                 .url(url)
                 .header("Authorization", "Token "+token)
@@ -121,7 +120,7 @@ public class AutosFragment extends Fragment {
                                 jsonObject.getString("roues"),
                                 jsonObject.getString("CNI")
                         );
-                        Log.i("=============", produit.toString());
+
                         automobiles.add(produit);
                         getActivity().runOnUiThread(new Runnable() {
                             @Override

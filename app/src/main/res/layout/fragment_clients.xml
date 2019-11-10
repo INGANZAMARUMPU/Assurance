@@ -4,8 +4,22 @@
     android:layout_height="match_parent"
     tools:context="bi.udev.assurance.ClientsFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerClients"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Liste des clients"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:id="@+id/textView12" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerClients"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView12" />
+    </RelativeLayout>
 </FrameLayout>

@@ -285,6 +285,7 @@ public class AssuranceActivity extends AppCompatActivity {
                 }
             }
         });
+        finish();
     }
 
     public void modifierAssurance(View view) {
@@ -351,6 +352,7 @@ public class AssuranceActivity extends AppCompatActivity {
                 }
             }
         });
+        finish();
     }
     public void supprimerAssurance(View view){
 
@@ -388,5 +390,6 @@ public class AssuranceActivity extends AppCompatActivity {
                 });
             }
         });
+        finish();
     }
 }
